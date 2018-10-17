@@ -1,194 +1,71 @@
-.wzor{
-    display:flex;
-    justify-content: center;
-}
-.KP{
-    border:1px black solid;
-    text-align: center;
-    width: 50%;
+* {
+    box-sizing: border-box;
 }
 
-.summary{
-    border:1px red solid;
+body {
+    padding: 10px;
+    background: #f2f2f2;
 }
 
-.faceclaim{
-    text-transform: uppercase;
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+    background: #efefef;
+    box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
 }
-
-.metryka{
-    border:1px blue solid;
-}
-
-.KPsection{
-    text-transform: uppercase;
-    text-decoration: #6a5750;
-}
-
-.KPlabel{
-    border:1px green solid;
-}
-.clear-backend {
-    background: #fff;
-    width: 100%;
-    height: 800px;
-    position: relative;
-}
-
-.avatar {
-    background: #f0f0f0;
-    width: 200px;
-    height: 200px;
-}
-
-.avatar div {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    top: 25px;
-    left: 25px;
-}
-
-.avatar div img {
-    width: 100%;
-    height: auto;
-}
-
-.clear-backend > input {
+.input {
     position: absolute;
-    filter: alpha(opacity=0);
     opacity: 0;
 }
 
-.clear-backend > input:hover {
-    cursor: pointer;
+.label {
+     width: 100%;
+     padding: 20px 30px;
+     background: #e5e5e5;
+     cursor: pointer;
+     font-weight: bold;
+     font-size: 18px;
+     color: #7f7f7f;
+     transition: background 0.1s, color 0.1s;
+ }
+
+.label:hover {
+    background: #d8d8d8;
 }
 
-.clear-backend > input:hover + span,
-.clear-backend > input:checked + span {
+.label:active {
+    background: #ccc;
+}
+
+.input:focus + .label {
+    box-shadow: inset 0px 0px 0px 3px #2aa1c0;
+    z-index: 1;
+}
+
+.input:checked + .label {
     background: #fff;
-    color: #1ABC9C;
-}
-.clear-backend > input:checked + span + i {
-    color: #1ABC9C;
-}
-
-.clear-backend > i {
-    position: absolute;
-    margin-top: -40px;
-    padding: 0 20px;
-    font-size: 20px;
-}
-
-.clear-backend > span,
-.clear-backend > i {
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-}
-
-.clear-backend > input,
-.clear-backend > span {
-    background: #f0f0f0;
-    display: block;
-    width: 200px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    z-index: 9;
-}
-
-.top-bar {
-    background: #f0f0f0;
     color: #000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100% - 200px);
-    height: 60px;
-    line-height: 60px;
-    font-size: 20px;
-    z-index: 9;
 }
 
-.top-bar li {
-    float: right;
+@media (min-width: 600px) {
+    .label {
+        width: auto;
+    }
 }
 
-.top-bar a {
-    display: block;
-    padding: 0 20px;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-}
-
-.top-bar a:hover {
-    color: #1ABC9C;
-}
-
-.top-bar li:hover {
+.panel {
+    display: none;
+    padding: 20px 30px 30px;
     background: #fff;
 }
 
-.tab-content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100% - 200px);
-    height: 100%;
-    padding-top: 60px;
-    overflow: hidden;
+@media (min-width: 600px) {
+    .panel {
+        order: 99;
+    }
 }
 
-.tab-content section {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: none;
-}
-
-.clear-backend > input.tab-1:checked ~ .tab-content .tab-item-1 {
-    display: block;
-}
-
-.clear-backend > input.tab-2:checked ~ .tab-content .tab-item-2 {
-    display: block;
-}
-
-.clear-backend > input.tab-3:checked ~ .tab-content .tab-item-3 {
-    display: block;
-}
-
-.clear-backend > input.tab-4:checked ~ .tab-content .tab-item-4 {
-    display: block;
-}
-
-.clear-backend > input.tab-5:checked ~ .tab-content .tab-item-5 {
-    display: block;
-}
-
-.clear-backend > input.tab-6:checked ~ .tab-content .tab-item-6 {
-    display: block;
-}
-
-.clear-backend > input.tab-7:checked ~ .tab-content .tab-item-7 {
-    display: block;
-}
-
-.clear-backend > input.tab-8:checked ~ .tab-content .tab-item-8 {
-    display: block;
-}
-
-.clear-backend > input.tab-9:checked ~ .tab-content .tab-item-9 {
-    display: block;
-}
-
-.clear-backend > input.tab-10:checked ~ .tab-content .tab-item-10 {
+.input:checked + .label + .panel {
     display: block;
 }
