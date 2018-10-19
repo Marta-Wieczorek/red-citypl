@@ -78,3 +78,16 @@
     display: block;
     margin: 0 auto;
 }
+.lokacja{
+    box-shadow: 0 48px 40px -32px rgba(0,0,0,0.3);
+    width:500px;
+    height: auto;
+    border: 0.3px solid #F1f1f1;
+    text-align: center;
+    text-transform: ;
+}
+.lokacjaIMG{
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+}
